@@ -39,6 +39,9 @@
 "Navigation.Title" = "MVVM Demo";
 
 /* Login */
-"Login.Username.Empty" = "Chưa nhập tên đăng nhập";
+"Login.Email.Empty" = "Chưa nhập email";
 "Login.Password.Empty" = "Chưa nhập mặt khẩu";
 "Login.Username.Password.Invalid" = "Tên đăng nhập hoặc mật khẩu chưa đúng";
+"Login.Email.Format" = "Email chưa đúng định dạng";
+"Confirm.Password.Empty" = "Chưa nhập xác nhận mật khẩu";
+"Confirm.Doesn't.Match" = "Xác nhận mật khẩu không trùng khớp";

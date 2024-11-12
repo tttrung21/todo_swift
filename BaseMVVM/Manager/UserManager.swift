@@ -16,25 +16,29 @@ class UserManager {
     /// The default singleton instance.
     static let shared = UserManager()
     
-    let currentUser: BehaviorRelay<User?>
+    let currentUser: BehaviorRelay<TodoUser?>
     
     private init() {
-        guard let jsonString = UserDefaults.standard.object(forKey: Configs.UserDefaultsKeys.CurrentUser) as? String else {
-            currentUser = BehaviorRelay<User?>(value: nil)
-            return
+            // Load the saved user data from UserDefaults
+            if let userData = UserDefaults.standard.data(forKey: Configs.UserDefaultsKeys.CurrentUser),
+               let user = try? JSONDecoder().decode(TodoUser.self, from: userData) {
+                currentUser = BehaviorRelay<TodoUser?>(value: user)
+            } else {
+                currentUser = BehaviorRelay<TodoUser?>(value: nil)
+            }
         }
-        let user = Mapper<User>().map(JSONString: jsonString)
-        currentUser = BehaviorRelay<User?>(value: user)
-    }
-    
-    func saveUser(_ user: User) {
-        let userString = user.toJSONString()
-        UserDefaults.standard.set(userString, forKey: Configs.UserDefaultsKeys.CurrentUser)
-        currentUser.accept(user)
-    }
-    
-    func removeUser() {
-        UserDefaults.standard.set(nil, forKey: Configs.UserDefaultsKeys.CurrentUser)
-        currentUser.accept(nil)
-    }
+        
+        func saveUser(_ user: TodoUser) {
+            // Encode the user to JSON data and save it in UserDefaults
+            if let userData = try? JSONEncoder().encode(user) {
+                UserDefaults.standard.set(userData, forKey: Configs.UserDefaultsKeys.CurrentUser)
+                currentUser.accept(user)
+            }
+        }
+        
+        func removeUser() {
+            // Remove user data from UserDefaults and update the relay
+            UserDefaults.standard.removeObject(forKey: Configs.UserDefaultsKeys.CurrentUser)
+            currentUser.accept(nil)
+        }
 }

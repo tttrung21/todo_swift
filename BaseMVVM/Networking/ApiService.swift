@@ -20,7 +20,8 @@ enum ApiService {
     // MARK: - Profile
     case getProfile
     // MARK: - Item
-    case getItems(page: Int, pageSize: Int)
+    case insertTodo(todo: TodoModel)
+    case getItems
     // MARK: Upload/Download
     case uploadAvatar(data: Data)
     case downloadAvatar(contentPath: String)
@@ -43,11 +44,13 @@ extension ApiService: TargetType {
     var path: String {
         switch self {
         case .login( _, _):
-            return "/api/login"
+            return "/auth/v1/token"
         case .register( _, _):
-            return "/api/register"
+            return "/auth/v1/signup"
         case .getItems:
-            return "/3/discover/movie"
+            return "/rest/v1/Todo"
+        case .insertTodo(_):
+            return "/rest/v1/Todo"
         case .getProfile:
             return "/api/user"
         case .uploadAvatar:
@@ -61,6 +64,8 @@ extension ApiService: TargetType {
         switch self {
         case .login:
             return .post
+        case .insertTodo:
+            return .post
         case .uploadAvatar:
             return .post
         default:
@@ -70,7 +75,9 @@ extension ApiService: TargetType {
     
     var headers: [String : String]? {
         if let accessToken = AuthManager.shared.token?.accessToken {
-            return ["Authorization": "Bearer \(accessToken)"]
+            return ["Authorization": "Bearer \(Configs.Network.apiKey)",
+                    "apikey" : Configs.Network.apiKey
+            ]
         }
         return nil
     }
@@ -84,10 +91,11 @@ extension ApiService: TargetType {
         case .register(let username, let password):
             params["username"] = username
             params["password"] = password
-        case .getItems(let page, let pageSize):
-            params["api_key"] = Configs.Network.apiKey
-            params["page"] = page
-            params["pageSize"] = pageSize
+//        case .getItems:
+//            params["apikey"] = Configs.Network.apiKey
+//            params["Authorization"] = "Bearer \(Configs.Network.apiKey)"
+        case .insertTodo(let todo):
+            params
         default: break
         }
         return params
@@ -101,15 +109,19 @@ extension ApiService: TargetType {
         switch self {
         case .login:
             return .requestParameters(parameters: parameters, encoding: parameterEncoding)
+        case .register:
+            return .requestParameters(parameters: parameters, encoding: parameterEncoding)
         case .getProfile:
             return .requestParameters(parameters: parameters, encoding: parameterEncoding)
         case .getItems:
             return .requestParameters(parameters: parameters, encoding: parameterEncoding)
-        case .uploadAvatar(let data):
-            let multipartFormData = [MultipartFormData(provider: .data(data), name: "file", fileName: "image.png", mimeType: "image/png")]
-            return .uploadCompositeMultipart(multipartFormData, urlParameters: ["api_key": "dc6zaTOxFJmzC", "username": "Moya"])
-        case.downloadAvatar:
-            return .downloadDestination(defaultDownloadDestination)
+        case .insertTodo:
+            return .requestParameters(parameters: parameters, encoding: parameterEncoding)
+//        case .uploadAvatar(let data):
+//            let multipartFormData = [MultipartFormData(provider: .data(data), name: "file", fileName: "image.png", mimeType: "image/png")]
+//            return .uploadCompositeMultipart(multipartFormData, urlParameters: ["api_key": "dc6zaTOxFJmzC", "username": "Moya"])
+//        case.downloadAvatar:
+//            return .downloadDestination(defaultDownloadDestination)
         default:
             return .requestPlain
         }

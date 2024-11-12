@@ -13,7 +13,11 @@ import RxCocoa
 class CellViewModel {
     var disposeBag = DisposeBag()
     
+    let id = BehaviorRelay<Int?>(value: nil)
     let title = BehaviorRelay<String?>(value: nil)
-    let detail = BehaviorRelay<String?>(value: nil)
-    let imageUrl = BehaviorRelay<String?>(value: nil)
+    let notes = BehaviorRelay<String?>(value: nil)
+    let category = BehaviorRelay<String?>(value: nil)
+    let dueDate = BehaviorRelay<String?>(value: nil)
+    let dueTime = BehaviorRelay<String?>(value: nil)
+    let isCompleted = BehaviorRelay<Bool>(value: false)
 }

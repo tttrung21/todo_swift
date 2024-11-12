@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+class AddTaskNavigator: Navigator {
+    func pushBackHome() {
+        navigationController?.popViewController(animated: true)
+    }
+    func pushToHome(){
+        let viewController = HomeViewController(nibName: HomeViewController.className, bundle: nil)
+        let navigator = HomeNavigator(with: viewController)
+        let viewModel = HomeViewModel(navigator: navigator)
+        viewController.viewModel = viewModel
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+}

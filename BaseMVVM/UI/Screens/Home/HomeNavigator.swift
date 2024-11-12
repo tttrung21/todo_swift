@@ -9,7 +9,11 @@
 import Foundation
 
 class HomeNavigator: Navigator {
-    func presentSideMenu() {
-        
+    func pushAddTask(){
+        let viewController = AddTaskViewController(nibName: AddTaskViewController.className, bundle: nil)
+        let navigator = AddTaskNavigator(with: viewController)
+        let viewModel = AddTaskViewModel(navigator: navigator)
+        viewController.viewModel = viewModel
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

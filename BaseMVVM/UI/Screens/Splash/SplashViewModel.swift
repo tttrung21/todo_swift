@@ -8,6 +8,7 @@
 
 import Foundation
 import RxCocoa
+import Supabase
 
 class SplashViewModel: ViewModel {
     private let navigator: SplashNavigator
@@ -16,7 +17,7 @@ class SplashViewModel: ViewModel {
         self.navigator = navigator
         super.init(navigator: navigator)
         
-        if AuthManager.shared.loggedIn.value {
+        if ((SupabaseClientManager.shared.client.auth.currentSession?.isExpired) != nil) {
             navigator.pushHome()
         } else {
             navigator.pushSignIn()

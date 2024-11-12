@@ -54,10 +54,10 @@ struct ApiProvider {
             .mapObject(User.self)
     }
     
-    func getItems(page: Int, pageSize: Int) -> Single<ArrayResponse<Item>> {
-        return provider.rx.request(.getItems(page: page, pageSize: pageSize))
+    func getItems() -> Single<ArrayResponse<Todo>> {
+        return provider.rx.request(.getItems)
             .filterSuccessfulStatusCodes()
-            .mapObject(ArrayResponse<Item>.self)
+            .mapObject(ArrayResponse<Todo>.self)
     }
     
     func downloadAvatar(_ userId: String) -> Observable<Moya.ProgressResponse> {

@@ -24,4 +24,7 @@ class SignUpNavigator: Navigator {
         navigationController?.pushViewController(viewController, animated: true)
         CATransaction.commit()
     }
+    func pushBackSignIn() {
+        navigationController?.popViewController(animated: true)
+    }
 }

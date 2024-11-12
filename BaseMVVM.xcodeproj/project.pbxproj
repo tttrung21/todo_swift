@@ -150,6 +150,26 @@
 		6BFA1211245977E4008F35BE /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BFA120D245977E4008F35BE /* ItemTableViewCell.xib */; };
 		6BFA1213245977FB008F35BE /* ItemCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFA1212245977FB008F35BE /* ItemCellViewModel.swift */; };
 		6BFA1214245977FB008F35BE /* ItemCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFA1212245977FB008F35BE /* ItemCellViewModel.swift */; };
+		8702D8772CDB5874006F8228 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702D8762CDB5874006F8228 /* Todo.swift */; };
+		8702D87D2CDB6AAD006F8228 /* TodoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8702D87C2CDB6AAD006F8228 /* TodoTableViewCell.xib */; };
+		8702D87E2CDB6AAD006F8228 /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702D87B2CDB6AAD006F8228 /* TodoTableViewCell.swift */; };
+		8702D8802CDB6AC8006F8228 /* TodoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702D87F2CDB6AC8006F8228 /* TodoCellViewModel.swift */; };
+		8702D8832CDB73A4006F8228 /* TodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702D8822CDB73A4006F8228 /* TodoService.swift */; };
+		8702D8862CDB73F8006F8228 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 8702D8852CDB73F8006F8228 /* Auth */; };
+		8702D8882CDB73F8006F8228 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 8702D8872CDB73F8006F8228 /* Functions */; };
+		8702D88A2CDB73F8006F8228 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 8702D8892CDB73F8006F8228 /* PostgREST */; };
+		8702D88C2CDB73F8006F8228 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 8702D88B2CDB73F8006F8228 /* Realtime */; };
+		8702D88E2CDB73F8006F8228 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 8702D88D2CDB73F8006F8228 /* Storage */; };
+		8702D8902CDB73F8006F8228 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8702D88F2CDB73F8006F8228 /* Supabase */; };
+		8702D8942CDB7D64006F8228 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702D8932CDB7D64006F8228 /* UserService.swift */; };
+		8702D8962CDB7E21006F8228 /* SupabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702D8952CDB7E21006F8228 /* SupabaseClient.swift */; };
+		8705F65E2CDB24390097A75A /* AddTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8705F65D2CDB24390097A75A /* AddTaskViewController.xib */; };
+		8705F65F2CDB24390097A75A /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8705F65C2CDB24390097A75A /* AddTaskViewController.swift */; };
+		8705F6612CDB245F0097A75A /* AddTaskNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8705F6602CDB245F0097A75A /* AddTaskNavigator.swift */; };
+		8705F6632CDB246E0097A75A /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8705F6622CDB246E0097A75A /* AddTaskViewModel.swift */; };
+		875319442CE2EFCE00F05A6C /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 875319432CE2EFCE00F05A6C /* Differentiator */; };
+		87BD65AC2CDDA8AF0014D9A4 /* TodoUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BD65AB2CDDA8AF0014D9A4 /* TodoUser.swift */; };
+		87C229632CDCB5260062FED0 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C229622CDCB5260062FED0 /* StringExtension.swift */; };
 		8C0F9CF9291C8DC9FCC77E39 /* Pods_BaseMVVM_prod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AF1E92BF0C97F100C24B5C /* Pods_BaseMVVM_prod.framework */; };
 /* End PBXBuildFile section */
 
@@ -232,6 +252,19 @@
 		6BFA120D245977E4008F35BE /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 		6BFA1212245977FB008F35BE /* ItemCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellViewModel.swift; sourceTree = "<group>"; };
 		82AF1E92BF0C97F100C24B5C /* Pods_BaseMVVM_prod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseMVVM_prod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8702D8762CDB5874006F8228 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		8702D87B2CDB6AAD006F8228 /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
+		8702D87C2CDB6AAD006F8228 /* TodoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoTableViewCell.xib; sourceTree = "<group>"; };
+		8702D87F2CDB6AC8006F8228 /* TodoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCellViewModel.swift; sourceTree = "<group>"; };
+		8702D8822CDB73A4006F8228 /* TodoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoService.swift; sourceTree = "<group>"; };
+		8702D8932CDB7D64006F8228 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		8702D8952CDB7E21006F8228 /* SupabaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseClient.swift; sourceTree = "<group>"; };
+		8705F65C2CDB24390097A75A /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		8705F65D2CDB24390097A75A /* AddTaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTaskViewController.xib; sourceTree = "<group>"; };
+		8705F6602CDB245F0097A75A /* AddTaskNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskNavigator.swift; sourceTree = "<group>"; };
+		8705F6622CDB246E0097A75A /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
+		87BD65AB2CDDA8AF0014D9A4 /* TodoUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoUser.swift; sourceTree = "<group>"; };
+		87C229622CDCB5260062FED0 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		B382C7210C5BF91B96662C39 /* Pods-BaseMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseMVVM.debug.xcconfig"; path = "Target Support Files/Pods-BaseMVVM/Pods-BaseMVVM.debug.xcconfig"; sourceTree = "<group>"; };
 		C7C9B18487AC17C23436D274 /* Pods-BaseMVVM_prod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseMVVM_prod.debug.xcconfig"; path = "Target Support Files/Pods-BaseMVVM_prod/Pods-BaseMVVM_prod.debug.xcconfig"; sourceTree = "<group>"; };
 		E7C9EDC0FFDF7A0146B05653 /* Pods-BaseMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseMVVM.release.xcconfig"; path = "Target Support Files/Pods-BaseMVVM/Pods-BaseMVVM.release.xcconfig"; sourceTree = "<group>"; };
@@ -242,6 +275,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8702D8902CDB73F8006F8228 /* Supabase in Frameworks */,
+				8702D88E2CDB73F8006F8228 /* Storage in Frameworks */,
+				8702D88A2CDB73F8006F8228 /* PostgREST in Frameworks */,
+				8702D8882CDB73F8006F8228 /* Functions in Frameworks */,
+				875319442CE2EFCE00F05A6C /* Differentiator in Frameworks */,
+				8702D8862CDB73F8006F8228 /* Auth in Frameworks */,
+				8702D88C2CDB73F8006F8228 /* Realtime in Frameworks */,
 				3948E61170197D32C44BCA49 /* Pods_BaseMVVM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +348,7 @@
 		6B1C7F5223C03D3300A2EE8D /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				8702D8812CDB735D006F8228 /* TodoApi */,
 				6B1A7F8623C19A2200FEBBDE /* Utils */,
 				6BF7314C2455330C005D0441 /* MockResponse */,
 				6BF7312424547420005D0441 /* ApiService.swift */,
@@ -324,6 +365,8 @@
 				6B1A7F8223C191E000FEBBDE /* User.swift */,
 				6B4A7C5324544D4D00263634 /* Token.swift */,
 				6B1A7F8023C191CF00FEBBDE /* Item.swift */,
+				8702D8762CDB5874006F8228 /* Todo.swift */,
+				87BD65AB2CDDA8AF0014D9A4 /* TodoUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -358,6 +401,7 @@
 				6B9F81B22430E74800C50D5F /* UITableViewExtensions.swift */,
 				6B9F81B42430E74800C50D5F /* UIViewControllerExtensions.swift */,
 				6B9F81AF2430E74800C50D5F /* UIViewExtensions.swift */,
+				87C229622CDCB5260062FED0 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -385,6 +429,7 @@
 		6B1C7F5E23C03EC100A2EE8D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				8705F65B2CDB236F0097A75A /* AddTask */,
 				6BAE280B244EB710009EA0AB /* Home */,
 				6B1C7F5F23C03ED700A2EE8D /* Splash */,
 				6BFA11F1245955E5008F35BE /* SignIn */,
@@ -490,6 +535,7 @@
 		6BAE280B244EB710009EA0AB /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8702D87A2CDB6A3E006F8228 /* TableViewCell */,
 				6BAE2822244F0335009EA0AB /* HomeViewController.swift */,
 				6BAE2823244F0335009EA0AB /* HomeViewController.xib */,
 				6BAE2812244EB76A009EA0AB /* HomeViewModel.swift */,
@@ -548,6 +594,37 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		8702D87A2CDB6A3E006F8228 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8702D87B2CDB6AAD006F8228 /* TodoTableViewCell.swift */,
+				8702D87C2CDB6AAD006F8228 /* TodoTableViewCell.xib */,
+				8702D87F2CDB6AC8006F8228 /* TodoCellViewModel.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		8702D8812CDB735D006F8228 /* TodoApi */ = {
+			isa = PBXGroup;
+			children = (
+				8702D8822CDB73A4006F8228 /* TodoService.swift */,
+				8702D8932CDB7D64006F8228 /* UserService.swift */,
+				8702D8952CDB7E21006F8228 /* SupabaseClient.swift */,
+			);
+			path = TodoApi;
+			sourceTree = "<group>";
+		};
+		8705F65B2CDB236F0097A75A /* AddTask */ = {
+			isa = PBXGroup;
+			children = (
+				8705F65C2CDB24390097A75A /* AddTaskViewController.swift */,
+				8705F65D2CDB24390097A75A /* AddTaskViewController.xib */,
+				8705F6602CDB245F0097A75A /* AddTaskNavigator.swift */,
+				8705F6622CDB246E0097A75A /* AddTaskViewModel.swift */,
+			);
+			path = AddTask;
+			sourceTree = "<group>";
+		};
 		8E697661D24CD95DFC44AEA3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -586,6 +663,15 @@
 			dependencies = (
 			);
 			name = BaseMVVM;
+			packageProductDependencies = (
+				8702D8852CDB73F8006F8228 /* Auth */,
+				8702D8872CDB73F8006F8228 /* Functions */,
+				8702D8892CDB73F8006F8228 /* PostgREST */,
+				8702D88B2CDB73F8006F8228 /* Realtime */,
+				8702D88D2CDB73F8006F8228 /* Storage */,
+				8702D88F2CDB73F8006F8228 /* Supabase */,
+				875319432CE2EFCE00F05A6C /* Differentiator */,
+			);
 			productName = BaseMVVM;
 			productReference = 6B1C7F3A23C0392600A2EE8D /* BaseMVVM.app */;
 			productType = "com.apple.product-type.application";
@@ -633,6 +719,10 @@
 				Base,
 			);
 			mainGroup = 6B1C7F3123C0392600A2EE8D;
+			packageReferences = (
+				8702D8842CDB73F8006F8228 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				875319422CE2EFCE00F05A6C /* XCRemoteSwiftPackageReference "RxDataSources" */,
+			);
 			productRefGroup = 6B1C7F3B23C0392600A2EE8D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -651,10 +741,12 @@
 				6BF7315D24553410005D0441 /* MockSignIn.json in Resources */,
 				6B1C7F4A23C0392800A2EE8D /* LaunchScreen.storyboard in Resources */,
 				6BD57C62244F3A1C009E7017 /* Localizable.strings in Resources */,
+				8705F65E2CDB24390097A75A /* AddTaskViewController.xib in Resources */,
 				6BFA1210245977E4008F35BE /* ItemTableViewCell.xib in Resources */,
 				6BAE27F2244DE4FF009EA0AB /* SignUpViewController.xib in Resources */,
 				6BFA11F624595600008F35BE /* SignInViewController.xib in Resources */,
 				6BFA1203245970EE008F35BE /* ListViewController.xib in Resources */,
+				8702D87D2CDB6AAD006F8228 /* TodoTableViewCell.xib in Resources */,
 				6B1C7F4723C0392800A2EE8D /* Assets.xcassets in Resources */,
 				6BABF57B23C7445600250D11 /* Colors.xcassets in Resources */,
 				6B1C7F4523C0392600A2EE8D /* Main.storyboard in Resources */,
@@ -781,10 +873,14 @@
 				6B1C7F5C23C03E3600A2EE8D /* View.swift in Sources */,
 				6B470EBE2430EBE50037B83B /* LibsManager.swift in Sources */,
 				6B1C7F4223C0392600A2EE8D /* SplashViewController.swift in Sources */,
+				8702D8832CDB73A4006F8228 /* TodoService.swift in Sources */,
 				6B52C68423C057DC003A35DD /* SplashNavigator.swift in Sources */,
+				8702D87E2CDB6AAD006F8228 /* TodoTableViewCell.swift in Sources */,
 				6B1C7F5A23C03E0800A2EE8D /* ViewController.swift in Sources */,
 				6B52C67623C04BFB003A35DD /* Navigator.swift in Sources */,
 				6BAE2809244E0C6A009EA0AB /* CheckboxButton.swift in Sources */,
+				8702D8802CDB6AC8006F8228 /* TodoCellViewModel.swift in Sources */,
+				8702D8962CDB7E21006F8228 /* SupabaseClient.swift in Sources */,
 				6B9F81B92430E74800C50D5F /* DateExtension.swift in Sources */,
 				6B9F81BD2430E74800C50D5F /* ObjectExtensions.swift in Sources */,
 				6BAE2824244F0335009EA0AB /* HomeViewController.swift in Sources */,
@@ -811,15 +907,20 @@
 				6BAE2813244EB76A009EA0AB /* HomeViewModel.swift in Sources */,
 				6B9F81AC2430E08B00C50D5F /* Configs.swift in Sources */,
 				6B1A7F8323C191E000FEBBDE /* User.swift in Sources */,
+				87C229632CDCB5260062FED0 /* StringExtension.swift in Sources */,
 				6BFA1201245970EE008F35BE /* ListViewController.swift in Sources */,
 				6B4A7C5424544D4D00263634 /* Token.swift in Sources */,
 				6B6CA3282453057E00F6B237 /* ImagePickerManager.swift in Sources */,
 				6B7C11AE244FC94F00D66FDD /* AuthManager.swift in Sources */,
 				6B3C48E32457C1AF000CB362 /* ObjectResponse.swift in Sources */,
+				8705F6632CDB246E0097A75A /* AddTaskViewModel.swift in Sources */,
 				6B1A7F8823C19A8600FEBBDE /* ObservableType+ObjectMapper.swift in Sources */,
 				6B52C68223C057D0003A35DD /* SplashViewModel.swift in Sources */,
 				6BFA1213245977FB008F35BE /* ItemCellViewModel.swift in Sources */,
+				87BD65AC2CDDA8AF0014D9A4 /* TodoUser.swift in Sources */,
+				8702D8772CDB5874006F8228 /* Todo.swift in Sources */,
 				6BAE2803244DF4C4009EA0AB /* SignUpNavigator.swift in Sources */,
+				8705F65F2CDB24390097A75A /* AddTaskViewController.swift in Sources */,
 				6BFA1209245971ED008F35BE /* ListNavigator.swift in Sources */,
 				6BAE27F5244DE51D009EA0AB /* SignUpViewModel.swift in Sources */,
 				6BFA11F424595600008F35BE /* SignInViewController.swift in Sources */,
@@ -828,7 +929,9 @@
 				6B9F81BE2430E74800C50D5F /* UIColorExtensions.swift in Sources */,
 				6B1A7F8523C1967B00FEBBDE /* Single+ObjectMapper.swift in Sources */,
 				6B4A7C57245455EA00263634 /* UserManager.swift in Sources */,
+				8705F6612CDB245F0097A75A /* AddTaskNavigator.swift in Sources */,
 				6B9F81AE2430E4F900C50D5F /* LogManager.swift in Sources */,
+				8702D8942CDB7D64006F8228 /* UserService.swift in Sources */,
 				6B1A7F8123C191CF00FEBBDE /* Item.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1159,6 +1262,63 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8702D8842CDB73F8006F8228 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+		875319422CE2EFCE00F05A6C /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8702D8852CDB73F8006F8228 /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8702D8842CDB73F8006F8228 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		8702D8872CDB73F8006F8228 /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8702D8842CDB73F8006F8228 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Functions;
+		};
+		8702D8892CDB73F8006F8228 /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8702D8842CDB73F8006F8228 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		8702D88B2CDB73F8006F8228 /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8702D8842CDB73F8006F8228 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Realtime;
+		};
+		8702D88D2CDB73F8006F8228 /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8702D8842CDB73F8006F8228 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+		8702D88F2CDB73F8006F8228 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8702D8842CDB73F8006F8228 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+		875319432CE2EFCE00F05A6C /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 875319422CE2EFCE00F05A6C /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6B1C7F3223C0392600A2EE8D /* Project object */;
 }

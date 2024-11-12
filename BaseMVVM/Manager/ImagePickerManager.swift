@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 import MobileCoreServices
 import Photos
+import UIKit
 
 enum ImagePickerManagerError: Error {
     case accessDenied

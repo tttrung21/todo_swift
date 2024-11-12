@@ -12,7 +12,8 @@ import RxSwift
 
 class SignInViewModel: ViewModel {
     // MARK: Public Properties
-    
+    let errorMessage = PublishSubject<String>()
+
     // MARK: Private Properties
     private let navigator: SignInNavigator
     
@@ -22,10 +23,10 @@ class SignInViewModel: ViewModel {
     }
     
     // MARK: Public Function
-    func signIn(userName: String, password: String) {
-        if userName.isEmpty {
+    func signIn(email: String, password: String) {
+        if email.isEmpty {
             navigator.showAlert(title: "Common.Error".localized(),
-                                message: "Login.Username.Empty".localized())
+                                message: "Login.Email.Empty".localized())
             return
         }
         if password.isEmpty {
@@ -33,20 +34,33 @@ class SignInViewModel: ViewModel {
                                 message: "Login.Password.Empty".localized())
             return
         }
-        
-        Application.shared
-            .mockProvider
-            .login(username: userName, password: password)
-            .trackActivity(loadingIndicator)
-            .subscribe(onNext: { [weak self] token in
-                guard let self = self else { return }
-                //Save data
-                AuthManager.shared.token = token
-                self.fetchProfile()
-            }, onError: {[weak self] error in
-                self?.navigator.showAlert(title: "Common.Error".localized(),
-                                          message: "Login.Username.Password.Invalid".localized())
-            }).disposed(by: disposeBag)
+        SupabaseClientManager.shared.userService.signIn(email: email, password: password).observeOn(MainScheduler.instance).trackActivity(loadingIndicator)
+            .subscribe(
+                onNext: {
+                    user in
+                    UserManager.shared.saveUser(user)
+                    print(user.id)
+                    self.navigator.pushHome()
+                    },
+                onError: {
+                    error in
+                    self.navigator.showAlert(title: "Common.Error".localized(),
+                                             message: error.localizedDescription)
+                    }
+                ).disposed(by: disposeBag)
+//        Application.shared
+//            .mockProvider
+//            .login(username: userName, password: password)
+//            .trackActivity(loadingIndicator)
+//            .subscribe(onNext: { [weak self] token in
+//                guard let self = self else { return }
+//                //Save data
+//                AuthManager.shared.token = token
+//                self.fetchProfile()
+//            }, onError: {[weak self] error in
+//                self?.navigator.showAlert(title: "Common.Error".localized(),
+//                                          message: "Login.Username.Password.Invalid".localized())
+//            }).disposed(by: disposeBag)
     }
     
     func openSignUp() {
@@ -54,20 +68,20 @@ class SignInViewModel: ViewModel {
     }
     
     // MARK: Private Function
-    private func fetchProfile() {
-        Application.shared
-            .mockProvider
-            .getProfile()
-            .trackActivity(loadingIndicator)
-            .subscribe(onNext: { [weak self] user in
-                guard let self = self else { return }
-                //Save data
-                UserManager.shared.saveUser(user)
-                //Navigate
-                self.navigator.pushHome()
-            }, onError: {[weak self] error in
-                self?.navigator.showAlert(title: "Common.Error".localized(),
-                                          message: "Login.Username.Password.Invalid".localized())
-            }).disposed(by: disposeBag)
-    }
+//    private func fetchProfile() {
+//        Application.shared
+//            .mockProvider
+//            .getProfile()
+//            .trackActivity(loadingIndicator)
+//            .subscribe(onNext: { [weak self] user in
+//                guard let self = self else { return }
+//                //Save data
+//                UserManager.shared.saveUser(user)
+//                //Navigate
+//                self.navigator.pushHome()
+//            }, onError: {[weak self] error in
+//                self?.navigator.showAlert(title: "Common.Error".localized(),
+//                                          message: "Login.Username.Password.Invalid".localized())
+//            }).disposed(by: disposeBag)
+//    }
 }

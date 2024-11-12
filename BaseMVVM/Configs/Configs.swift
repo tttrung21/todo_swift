@@ -37,8 +37,8 @@ struct Configs {
     }
 
     struct Network {
-        static let apiBaseUrl = "https://api.themoviedb.org"
-        static let apiKey = "26763d7bf2e94098192e629eb975dab0"
+        static let apiBaseUrl = "https://idyenccqwjlhtxlzhgbl.supabase.co"
+        static let apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlkeWVuY2Nxd2psaHR4bHpoZ2JsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzA3MTQwNDMsImV4cCI6MjA0NjI5MDA0M30.c801f-bHrTEUPVY8NC5Vj5qkpyCR4j_COgyRiubyzUE"
     }
 
     struct BaseDimensions {
@@ -68,5 +68,6 @@ struct Configs {
         static let date = "dd/MM/yyyy"
         static let time = "HH:mm"
         static let dateTime = "dd/MM/yyyy HH:mm"
+        static let mdy = "MMMM dd, yyyy"
     }
 }

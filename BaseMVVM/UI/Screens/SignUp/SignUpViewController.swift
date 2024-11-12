@@ -12,9 +12,9 @@ import RxCocoa
 
 class SignUpViewController: ViewController<SignUpViewModel, SignUpNavigator> {
     @IBOutlet weak private var signUpButton: UIButton!
-    @IBOutlet weak private var usernameTextField: UITextField!
+    @IBOutlet weak private var emailTextField: UITextField!
     @IBOutlet weak private var passwordTextField: UITextField!
-    
+    @IBOutlet weak private var confirmTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,23 +22,23 @@ class SignUpViewController: ViewController<SignUpViewModel, SignUpNavigator> {
     
     override func setupUI() {
         super.setupUI()
-        setTitle("Navigation.Title".localized(), subTitle: "Newwave solution CSJ")
-        showLeftButton()
-        usernameTextField.text = "Lê Thọ Sơn"
-        passwordTextField.text = "123456"
-    }
+        showLeftButton()    }
     
     override func setupListener() {
         super.setupListener()
-        
-        usernameTextField.rx.text.orEmpty.bind { [weak self] text in
+        confirmTextField.rx.text.orEmpty.bind { [weak self] text in
             guard let self = self else { return }
-            self.viewModel.changeUserName(userName: text)
+            self.viewModel.changeConfirm(confirm: text)
+        }.disposed(by: disposeBag)
+        
+        emailTextField.rx.text.orEmpty.bind { [weak self] text in
+            guard let self = self else { return }
+            self.viewModel.changeEmail(email: text)
         }.disposed(by: disposeBag)
         
         passwordTextField.rx.text.orEmpty.bind { [weak self] text in
             guard let self = self else { return }
-            self.viewModel.changeUserName(userName: text)
+            self.viewModel.changePassword(password: text)
         }.disposed(by: disposeBag)
         
         signUpButton.rx.tap.bind { [weak self] text in

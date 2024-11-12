@@ -1,13 +1,17 @@
 import Foundation
+import Supabase
 
-class ServiceContainer {
-    static let shared = ServiceContainer()
-
-    // Lazy initialization of services
-    private(set) lazy var todoService: TodoService = TodoService()
-    private(set) lazy var userService: UserService = UserService()
+class SupabaseClientManager {
     
-    // Other services can be added here in the future
+    static let shared = SupabaseClientManager()
     
-    private init() {}
+    let client = SupabaseClient(supabaseURL: URL(string: Configs.Network.apiBaseUrl)!, supabaseKey: Configs.Network.apiKey)
+    var userService: UserService
+    var todoService: TodoService
+        
+    private init() {
+        self.userService = UserService(client: client)
+        self.todoService = TodoService(client: client)
+    }
+    
 }

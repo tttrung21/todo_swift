@@ -1,34 +1,88 @@
-
 import Foundation
+import Supabase
 import RxSwift
-import RxRelay
 
-class TodoApiService {
-    private let apiProvider: TodoApiProvider
+class TodoService {
+    
     private let disposeBag = DisposeBag()
+    private let client: SupabaseClient
+//    private let currentUser = UserManager.shared.currentUser.value!
+    init(client: SupabaseClient) {
+        self.client = client
+    }
+    func getItems() -> Single<[TodoModel]> {
+        guard let currentUser = UserManager.shared.currentUser.value else {
+            return Single.error(NSError(domain: "UserService", code: 401, userInfo: [NSLocalizedDescriptionKey: "User is not logged in."]))
+        }
+            return Single.create { single in
+                Task{
+                    do{
+                        let todos: [TodoModel] = try await self.client.from("Todo").select().eq("user_id", value: currentUser.id.uuidString).execute().value
+                        single(.success(todos))
+                    }
+                    catch{
+                        single(.error(error))
+                    }
+                }
+                return Disposables.create()
+            }
+        }
+    func createItem(todo: TodoModel) -> Single<Void> {
+        return Single.create { single in
+            Task{
+                do {
+                    try await self.client.from("Todo")
+                        .insert([todo])
+                        .execute()
+                        .value
+                    single(.success(()))
+                } catch {
+                    single(.error(error))
+                }
+            }
+            return Disposables.create()
+        }
+    }
+    func toggleIsCompleted(for todo: TodoModel) -> Single<TodoModel> {
+        return Single.create { single in
+            Task {
+                do {
+                    let isCompleted = !todo.isCompleted
+                    let _ = try await self.client.from("Todo")
+                        .update(["is_completed": isCompleted])
+                        .eq("user_id", value: todo.userId)
+                        .eq("id", value: todo.id)
+                        .execute()
+                    let newTodo = TodoModel(id: todo.id, title: todo.title, notes: todo.notes, category: todo.category, dueDate: todo.dueDate, dueTime: todo.dueTime, isCompleted: isCompleted, userId: todo.userId)
+                    single(.success(newTodo))
+                } catch {
+                    single(.error(error))
+                }
+            }
+            return Disposables.create()
+        }
+    }
+    func deleteTodo(todo: TodoModel) -> Single<Void> {
+        return Single.create { single in
+            print("delete todo")
+            Task {
+                print("task start")
+                do {
+                    let response = try await self.client.from("Todo")
+                        .delete()
+                        .eq("id", value: todo.id)
+                        .eq("user_id", value: todo.userId)
+                        .execute()
 
-    // Observable properties to hold the completed and incomplete todos
-    var incompleteTodos: BehaviorRelay<[TodoModel]> = BehaviorRelay(value: [])
-    var completedTodos: BehaviorRelay<[TodoModel]> = BehaviorRelay(value: [])
-
-    init(apiProvider: TodoApiProvider) {
-        self.apiProvider = apiProvider
+                    print("success delete service: \(response)")
+                    single(.success(()))
+                } catch {
+                    print("fail delete service")
+                    single(.error(error))
+                }
+            }
+            return Disposables.create()
+        }
     }
 
-    // Fetch todos and separate them into completed and incomplete
-    func fetchTodos() {
-        apiProvider.fetchTodos()
-            .subscribe(onNext: { [weak self] todos in
-                // Filter todos based on isCompleted flag
-                let incomplete = todos.filter { !$0.isCompleted }
-                let completed = todos.filter { $0.isCompleted }
-
-                // Update the BehaviorRelays with the filtered data
-                self?.incompleteTodos.accept(incomplete)
-                self?.completedTodos.accept(completed)
-            }, onError: { error in
-                print("Error fetching todos: \(error.localizedDescription)")
-            })
-            .disposed(by: disposeBag)
-    }
 }
