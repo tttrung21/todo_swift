@@ -1,19 +1,6 @@
-## MVVM
-https://github.com/sergdort/CleanArchitectureRxSwift 
-https://github.com/khoren93/SwiftHub 
+Simple todo app with sign in / sign up, view todos, add and delete todo, update todo status
 
-## Extension
-https://github.com/SwifterSwift/SwifterSwift
+![Simulator Screen Recording - iPhone 15 Pro - 2024-11-12 at 10 35 00](https://github.com/user-attachments/assets/6b8d179c-8285-4cf0-aaa0-89f91d1b28b8)
+![Simulator Screen Recording - iPhone 15 Pro - 2024-11-12 at 10 31 08](https://github.com/user-attachments/assets/c70cd0f1-ac7b-4d7b-b3a3-429891b7714e)
+![Simulator Screen Recording - iPhone 15 Pro - 2024-11-12 at 10 20 36](https://github.com/user-attachments/assets/0ba9cc75-1493-4251-bc50-519cdc4eed78)
 
-## Logger
-https://github.com/SwiftyBeaver/SwiftyBeaver
-
-## Network + Reactive
-https://github.com/Moya/Moya
-https://github.com/ReactiveX/RxSwift
-
-## API Document:
-https://developers.themoviedb.org/3/movies/get-movie-lists
-#### Example <br />
-https://api.themoviedb.org/3/movie/550?api_key=26763d7bf2e94098192e629eb975dab0
-https://api.themoviedb.org/3/discover/movie?page=1&api_key=26763d7bf2e94098192e629eb975dab0
