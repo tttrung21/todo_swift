@@ -30,11 +30,11 @@ class HomeViewModel: ViewModel {
                         self?.toggleComplete(todo: updatedTodo)
                     })
                     .disposed(by: disposeBag)
-        todosRelay.map { items -> [TodoCellViewModel] in
-            return items.map { item -> TodoCellViewModel in
-                return TodoCellViewModel(item: item, toggle: self.toggle)
-            }
-        }.bind(to: cellVMs).disposed(by: disposeBag)
+//        todosRelay.map { items -> [TodoCellViewModel] in
+//            return items.map { item -> TodoCellViewModel in
+//                return TodoCellViewModel(item: item, toggle: self.toggle)
+//            }
+//        }.bind(to: cellVMs).disposed(by: disposeBag)
         
     }
     // MARK: Public Function
@@ -51,7 +51,9 @@ class HomeViewModel: ViewModel {
             onSuccess: {
             _ in 
                 self.navigator.showAlert(title: "Success", message: "Successfully delete todo with id: \(String(describing: todo.id))")
-                self.fetchItems()
+                DispatchQueue.main.async{
+                    self.fetchItems()
+                }
             },
             onError: {
                 error in
@@ -94,33 +96,33 @@ class HomeViewModel: ViewModel {
     
     
     // MARK: Separate VM for test
-    let cellVMs = BehaviorRelay<[TodoCellViewModel]>(value: [])
-    let cellComplete = BehaviorRelay<[TodoCellViewModel]>(value: [])
-    let cellTodo = BehaviorRelay<[TodoCellViewModel]>(value: [])
-
-    private let todosRelay = BehaviorRelay<[TodoModel]>(value: [])
-    func getItem() {
-        SupabaseClientManager.shared.todoService.getItems()
-            .trackActivity(ActivityIndicator())
-            .subscribe(
-                onNext: { [weak self] response in
-                    guard let self = self else { return }
-                    if response.isEmpty {
-                        return
-                    }
-                    self.todosRelay.accept(response)
-                    
-
-//                    let completeTodos = response.results.filter { $0.isCompleted == true}
-//                    let incompleteTodos = response.results.filter { $0.isCompleted == false }
-//                    let completeCellVMs = completeTodos.map { TodoCellViewModel(item: $0) }
-//                    let todoCellVMs = incompleteTodos.map { TodoCellViewModel(item: $0) }
-//                    self.cellComplete.accept(completeCellVMs)
-//                    self.cellTodo.accept(todoCellVMs)
-                    
-                }, onError: { [weak self] error in
-                    self?.navigator.showAlert(
-                        title: "Error",message: error.localizedDescription)
-            }).disposed(by: disposeBag)
-    }
+//    let cellVMs = BehaviorRelay<[TodoCellViewModel]>(value: [])
+//    let cellComplete = BehaviorRelay<[TodoCellViewModel]>(value: [])
+//    let cellTodo = BehaviorRelay<[TodoCellViewModel]>(value: [])
+//
+//    private let todosRelay = BehaviorRelay<[TodoModel]>(value: [])
+//    func getItem() {
+//        SupabaseClientManager.shared.todoService.getItems()
+//            .trackActivity(ActivityIndicator())
+//            .subscribe(
+//                onNext: { [weak self] response in
+//                    guard let self = self else { return }
+//                    if response.isEmpty {
+//                        return
+//                    }
+//                    self.todosRelay.accept(response)
+//                    
+//
+////                    let completeTodos = response.results.filter { $0.isCompleted == true}
+////                    let incompleteTodos = response.results.filter { $0.isCompleted == false }
+////                    let completeCellVMs = completeTodos.map { TodoCellViewModel(item: $0) }
+////                    let todoCellVMs = incompleteTodos.map { TodoCellViewModel(item: $0) }
+////                    self.cellComplete.accept(completeCellVMs)
+////                    self.cellTodo.accept(todoCellVMs)
+//                    
+//                }, onError: { [weak self] error in
+//                    self?.navigator.showAlert(
+//                        title: "Error",message: error.localizedDescription)
+//            }).disposed(by: disposeBag)
+//    }
 }

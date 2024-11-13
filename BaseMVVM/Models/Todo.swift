@@ -7,7 +7,7 @@ struct TodoModel: Codable,Identifiable,Hashable{
     let notes:String?
     let category:String
     let dueDate:String
-    let dueTime:String
+    let dueTime:String?
     var isCompleted:Bool = false
     let userId: UUID?
     
@@ -17,15 +17,6 @@ struct TodoModel: Codable,Identifiable,Hashable{
         case dueTime = "due_time"
         case isCompleted = "is_completed"
         case userId = "user_id"
-    }
-    func areRequiredFieldsFilled() -> Bool {
-            guard !title.isEmpty,
-                  !dueDate.isEmpty,
-                  !dueTime.isEmpty
-            else {
-                return false
-            }
-        return true
     }
 }
 

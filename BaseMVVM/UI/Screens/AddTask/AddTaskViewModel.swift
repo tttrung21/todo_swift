@@ -35,8 +35,8 @@ class AddTaskViewModel : ViewModel{
             currentCategory = category
         }
     }
-    func createItem(with title: String, dueDate: String,dueTime: String, notes: String?) -> Single<Void>{
-        switch validate(title: title, dueDate: dueDate, dueTime: dueTime) {
+    func createItem(with title: String, dueDate: String,dueTime: String?, notes: String?) -> Single<Void>{
+        switch validate(title: title, dueDate: dueDate) {
         case .failure(let error):
             return .error(error)
         case .success:
@@ -47,12 +47,15 @@ class AddTaskViewModel : ViewModel{
             return .error(NSError(domain: "Auth", code: 10, userInfo: [NSLocalizedDescriptionKey: "Not logged in"]))
         }
         let category = currentCategory!
-        let time = convertTo12HourFormat(timeString: dueTime)!
-        let newItem = TodoModel(id: nil, title: title, notes: notes, category: category, dueDate: dueDate,dueTime: time, isCompleted: false, userId: userId)
+        var time:String?
+        if dueTime != ""{
+            time = convertTo12HourFormat(timeString: dueTime!)
+        }
+        let newItem = TodoModel(id: nil, title: title, notes: notes, category: category, dueDate: dueDate,dueTime: time ?? dueTime, isCompleted: false, userId: userId)
         return SupabaseClientManager.shared.todoService.createItem(todo: newItem)
     }
     
-    func validate(title: String, dueDate: String, dueTime: String) -> Result<Void, Error> {
+    func validate(title: String, dueDate: String) -> Result<Void, Error> {
         guard !title.isEmpty else {
             return .failure(NSError(domain: "AddTask", code: 1, userInfo: [NSLocalizedDescriptionKey: "Title cannot be empty"]))
         }
@@ -62,12 +65,6 @@ class AddTaskViewModel : ViewModel{
         
         guard !dueDate.isEmpty else {
             return .failure(NSError(domain: "AddTask", code: 3, userInfo: [NSLocalizedDescriptionKey: "Due date cannot be empty"]))
-        }
-        guard !dueTime.isEmpty else {
-            return .failure(NSError(domain: "AddTask", code: 4, userInfo: [NSLocalizedDescriptionKey: "Due time cannot be empty"]))
-        }
-        guard let _ = convertTo12HourFormat(timeString: dueTime) else {
-            return .failure(NSError(domain: "AddTask", code: 5, userInfo: [NSLocalizedDescriptionKey: "Wrong time format"]))
         }
         return .success(())
     }

@@ -68,23 +68,24 @@ class AddTaskViewController: ViewController<AddTaskViewModel,AddTaskNavigator> {
             guard let self = self else { return }
             let title = self.taskTitle.text ?? ""
             let dueDate = self.dateTextField.text ?? ""
-            let dueTime = self.timeTextField.text ?? ""
+            let dueTime = self.timeTextField.text
             let notes = self.notes.text
             self.viewModel.createItem(with: title, dueDate: dueDate,dueTime: dueTime, notes: notes)
             .subscribe(
                     onSuccess: { _ in
                         print("Task created successfully")
-//                        DispatchQueue.main.async{
-//                            self.showAlert(
-//                                title: "Success",
-//                                message: "Task created successfully",
-//                                completion: { _ in
-//                                    self.viewModel.backToHome()}
-//                            )
-//                        }
                         DispatchQueue.main.async{
-                            self.viewModel.backToHome()
+                            self.showAlert(
+                                title: "Success",
+                                message: "Task created successfully",
+                                completion: { _ in
+                                    self.viewModel.backToHome()
+                                }
+                            )
                         }
+//                        DispatchQueue.main.async{
+//                            self.viewModel.backToHome()
+//                        }
                     },
                     onError: { error in
                         print("error 1")

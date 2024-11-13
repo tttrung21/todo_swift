@@ -89,7 +89,7 @@ class HomeViewController: ViewController<HomeViewModel, HomeNavigator> {
 //                cell.bind(viewModel: cellViewModel)
 //            }.disposed(by: disposeBag)
 //        
-//        viewModel.loadingIndicator.asObservable().bind(to: isLoading).disposed(by: disposeBag)
+        viewModel.loadingIndicator.asObservable().bind(to: isLoading).disposed(by: disposeBag)
     }
 }
 extension HomeViewController : UITableViewDataSource,UITableViewDelegate{
