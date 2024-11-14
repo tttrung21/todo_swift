@@ -12,3 +12,6 @@ Simple todo app with sign in / sign up, view todos, add and delete todo, update 
 
 ![Simulator Screen Recording - iPhone 15 Pro - 2024-11-12 at 10 20 36](https://github.com/user-attachments/assets/0ba9cc75-1493-4251-bc50-519cdc4eed78)
 
+// Toggle language
+
+![Simulator Screen Recording - iPhone 15 Pro - 2024-11-14 at 10 55 37](https://github.com/user-attachments/assets/cdb8710c-3bd4-4e3d-a007-3d35e72f389c)
