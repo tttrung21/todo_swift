@@ -15,8 +15,12 @@ public extension String {
     ///
     ///        "Hello world".localized -> Hallo Welt
     ///
-    func localized(comment: String = "") -> String {
-        return NSLocalizedString(self, comment: comment)
+    func localized() -> String {
+//        return NSLocalizedString(self,tableName: "Localizable",bundle: .main,value: self, comment: self)
+        if let path = Bundle.main.path(forResource: LanguageCode, ofType: "lproj"), let bundle = Bundle(path: path){
+            return NSLocalizedString(self, bundle: bundle, comment: "")
+        }
+        return ""
     }
     #endif
 }

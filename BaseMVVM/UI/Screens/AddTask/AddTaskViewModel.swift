@@ -57,14 +57,14 @@ class AddTaskViewModel : ViewModel{
     
     func validate(title: String, dueDate: String) -> Result<Void, Error> {
         guard !title.isEmpty else {
-            return .failure(NSError(domain: "AddTask", code: 1, userInfo: [NSLocalizedDescriptionKey: "Title cannot be empty"]))
+            return .failure(NSError(domain: "AddTask", code: 1, userInfo: [NSLocalizedDescriptionKey: "EmptyTitle".localized()]))
         }
         guard currentCategory != nil else {
-            return .failure(NSError(domain: "AddTask", code: 2, userInfo: [NSLocalizedDescriptionKey: "No category selected"]))
+            return .failure(NSError(domain: "AddTask", code: 2, userInfo: [NSLocalizedDescriptionKey: "EmptyCategory".localized()]))
         }
         
         guard !dueDate.isEmpty else {
-            return .failure(NSError(domain: "AddTask", code: 3, userInfo: [NSLocalizedDescriptionKey: "Due date cannot be empty"]))
+            return .failure(NSError(domain: "AddTask", code: 3, userInfo: [NSLocalizedDescriptionKey: "EmptyDate".localized()]))
         }
         return .success(())
     }
@@ -75,6 +75,7 @@ class AddTaskViewModel : ViewModel{
         
         if let date = timeFormatter24Hour.date(from: timeString) {
             let timeFormatter12Hour = DateFormatter()
+            timeFormatter12Hour.locale = Locale(identifier: "en")
             timeFormatter12Hour.dateFormat = "hh:mm a"
                         return timeFormatter12Hour.string(from: date)
         }

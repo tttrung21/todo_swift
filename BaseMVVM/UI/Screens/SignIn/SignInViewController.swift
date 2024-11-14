@@ -22,6 +22,9 @@ class SignInViewController: ViewController<SignInViewModel, SignInNavigator> {
     
     override func setupUI() {
         super.setupUI()
+        passwordTextField.placeholder = "Password".localized()
+        signUpButton.setTitle("SignUp".localized(), for: .normal)
+        loginButton.setTitle("SignIn".localized(), for: .normal)
     }
     
     override func setupListener() {

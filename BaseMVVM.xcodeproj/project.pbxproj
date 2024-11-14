@@ -155,21 +155,20 @@
 		8702D87E2CDB6AAD006F8228 /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702D87B2CDB6AAD006F8228 /* TodoTableViewCell.swift */; };
 		8702D8802CDB6AC8006F8228 /* TodoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702D87F2CDB6AC8006F8228 /* TodoCellViewModel.swift */; };
 		8702D8832CDB73A4006F8228 /* TodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702D8822CDB73A4006F8228 /* TodoService.swift */; };
-		8702D8862CDB73F8006F8228 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 8702D8852CDB73F8006F8228 /* Auth */; };
-		8702D8882CDB73F8006F8228 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 8702D8872CDB73F8006F8228 /* Functions */; };
-		8702D88A2CDB73F8006F8228 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 8702D8892CDB73F8006F8228 /* PostgREST */; };
-		8702D88C2CDB73F8006F8228 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 8702D88B2CDB73F8006F8228 /* Realtime */; };
-		8702D88E2CDB73F8006F8228 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 8702D88D2CDB73F8006F8228 /* Storage */; };
-		8702D8902CDB73F8006F8228 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8702D88F2CDB73F8006F8228 /* Supabase */; };
 		8702D8942CDB7D64006F8228 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702D8932CDB7D64006F8228 /* UserService.swift */; };
 		8702D8962CDB7E21006F8228 /* SupabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702D8952CDB7E21006F8228 /* SupabaseClient.swift */; };
 		8705F65E2CDB24390097A75A /* AddTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8705F65D2CDB24390097A75A /* AddTaskViewController.xib */; };
 		8705F65F2CDB24390097A75A /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8705F65C2CDB24390097A75A /* AddTaskViewController.swift */; };
 		8705F6612CDB245F0097A75A /* AddTaskNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8705F6602CDB245F0097A75A /* AddTaskNavigator.swift */; };
 		8705F6632CDB246E0097A75A /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8705F6622CDB246E0097A75A /* AddTaskViewModel.swift */; };
-		875319442CE2EFCE00F05A6C /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 875319432CE2EFCE00F05A6C /* Differentiator */; };
 		87BD65AC2CDDA8AF0014D9A4 /* TodoUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BD65AB2CDDA8AF0014D9A4 /* TodoUser.swift */; };
 		87C229632CDCB5260062FED0 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C229622CDCB5260062FED0 /* StringExtension.swift */; };
+		87E32CA62CE59989009A32A0 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 87E32CA52CE59989009A32A0 /* Auth */; };
+		87E32CA82CE59989009A32A0 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 87E32CA72CE59989009A32A0 /* Functions */; };
+		87E32CAA2CE59989009A32A0 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 87E32CA92CE59989009A32A0 /* PostgREST */; };
+		87E32CAC2CE59989009A32A0 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 87E32CAB2CE59989009A32A0 /* Realtime */; };
+		87E32CAE2CE59989009A32A0 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 87E32CAD2CE59989009A32A0 /* Storage */; };
+		87E32CB02CE59989009A32A0 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 87E32CAF2CE59989009A32A0 /* Supabase */; };
 		8C0F9CF9291C8DC9FCC77E39 /* Pods_BaseMVVM_prod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AF1E92BF0C97F100C24B5C /* Pods_BaseMVVM_prod.framework */; };
 /* End PBXBuildFile section */
 
@@ -265,6 +264,8 @@
 		8705F6622CDB246E0097A75A /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
 		87BD65AB2CDDA8AF0014D9A4 /* TodoUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoUser.swift; sourceTree = "<group>"; };
 		87C229622CDCB5260062FED0 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		87C62A302CE487E200792743 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
+		87C62A312CE487E200792743 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B382C7210C5BF91B96662C39 /* Pods-BaseMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseMVVM.debug.xcconfig"; path = "Target Support Files/Pods-BaseMVVM/Pods-BaseMVVM.debug.xcconfig"; sourceTree = "<group>"; };
 		C7C9B18487AC17C23436D274 /* Pods-BaseMVVM_prod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseMVVM_prod.debug.xcconfig"; path = "Target Support Files/Pods-BaseMVVM_prod/Pods-BaseMVVM_prod.debug.xcconfig"; sourceTree = "<group>"; };
 		E7C9EDC0FFDF7A0146B05653 /* Pods-BaseMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseMVVM.release.xcconfig"; path = "Target Support Files/Pods-BaseMVVM/Pods-BaseMVVM.release.xcconfig"; sourceTree = "<group>"; };
@@ -275,13 +276,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8702D8902CDB73F8006F8228 /* Supabase in Frameworks */,
-				8702D88E2CDB73F8006F8228 /* Storage in Frameworks */,
-				8702D88A2CDB73F8006F8228 /* PostgREST in Frameworks */,
-				8702D8882CDB73F8006F8228 /* Functions in Frameworks */,
-				875319442CE2EFCE00F05A6C /* Differentiator in Frameworks */,
-				8702D8862CDB73F8006F8228 /* Auth in Frameworks */,
-				8702D88C2CDB73F8006F8228 /* Realtime in Frameworks */,
+				87E32CB02CE59989009A32A0 /* Supabase in Frameworks */,
+				87E32CAE2CE59989009A32A0 /* Storage in Frameworks */,
+				87E32CAA2CE59989009A32A0 /* PostgREST in Frameworks */,
+				87E32CA82CE59989009A32A0 /* Functions in Frameworks */,
+				87E32CA62CE59989009A32A0 /* Auth in Frameworks */,
+				87E32CAC2CE59989009A32A0 /* Realtime in Frameworks */,
 				3948E61170197D32C44BCA49 /* Pods_BaseMVVM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -664,13 +664,12 @@
 			);
 			name = BaseMVVM;
 			packageProductDependencies = (
-				8702D8852CDB73F8006F8228 /* Auth */,
-				8702D8872CDB73F8006F8228 /* Functions */,
-				8702D8892CDB73F8006F8228 /* PostgREST */,
-				8702D88B2CDB73F8006F8228 /* Realtime */,
-				8702D88D2CDB73F8006F8228 /* Storage */,
-				8702D88F2CDB73F8006F8228 /* Supabase */,
-				875319432CE2EFCE00F05A6C /* Differentiator */,
+				87E32CA52CE59989009A32A0 /* Auth */,
+				87E32CA72CE59989009A32A0 /* Functions */,
+				87E32CA92CE59989009A32A0 /* PostgREST */,
+				87E32CAB2CE59989009A32A0 /* Realtime */,
+				87E32CAD2CE59989009A32A0 /* Storage */,
+				87E32CAF2CE59989009A32A0 /* Supabase */,
 			);
 			productName = BaseMVVM;
 			productReference = 6B1C7F3A23C0392600A2EE8D /* BaseMVVM.app */;
@@ -691,6 +690,8 @@
 			dependencies = (
 			);
 			name = BaseMVVM_prod;
+			packageProductDependencies = (
+			);
 			productName = BaseMVVM;
 			productReference = 6B9F81F82430E76300C50D5F /* BaseMVVM_prod.app */;
 			productType = "com.apple.product-type.application";
@@ -712,11 +713,12 @@
 			};
 			buildConfigurationList = 6B1C7F3523C0392600A2EE8D /* Build configuration list for PBXProject "BaseMVVM" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = en;
+			developmentRegion = vi;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = 6B1C7F3123C0392600A2EE8D;
 			packageReferences = (
@@ -1008,6 +1010,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6B1C7F4423C0392600A2EE8D /* Base */,
+				87C62A302CE487E200792743 /* vi */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1024,6 +1027,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6BD57C64244F3A1C009E7017 /* en */,
+				87C62A312CE487E200792743 /* vi */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1035,6 +1039,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1095,6 +1100,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1283,40 +1289,35 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8702D8852CDB73F8006F8228 /* Auth */ = {
+		87E32CA52CE59989009A32A0 /* Auth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8702D8842CDB73F8006F8228 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Auth;
 		};
-		8702D8872CDB73F8006F8228 /* Functions */ = {
+		87E32CA72CE59989009A32A0 /* Functions */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8702D8842CDB73F8006F8228 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Functions;
 		};
-		8702D8892CDB73F8006F8228 /* PostgREST */ = {
+		87E32CA92CE59989009A32A0 /* PostgREST */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8702D8842CDB73F8006F8228 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = PostgREST;
 		};
-		8702D88B2CDB73F8006F8228 /* Realtime */ = {
+		87E32CAB2CE59989009A32A0 /* Realtime */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8702D8842CDB73F8006F8228 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Realtime;
 		};
-		8702D88D2CDB73F8006F8228 /* Storage */ = {
+		87E32CAD2CE59989009A32A0 /* Storage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8702D8842CDB73F8006F8228 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Storage;
 		};
-		8702D88F2CDB73F8006F8228 /* Supabase */ = {
+		87E32CAF2CE59989009A32A0 /* Supabase */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8702D8842CDB73F8006F8228 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Supabase;
-		};
-		875319432CE2EFCE00F05A6C /* Differentiator */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 875319422CE2EFCE00F05A6C /* XCRemoteSwiftPackageReference "RxDataSources" */;
-			productName = Differentiator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

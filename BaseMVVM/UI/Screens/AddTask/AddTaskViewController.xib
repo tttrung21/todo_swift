@@ -15,14 +15,20 @@
                 <outlet property="backButton" destination="Bcj-1q-nvh" id="5wc-N7-QZF"/>
                 <outlet property="categoryEvent" destination="3sr-F9-Tk4" id="gb7-nC-F6U"/>
                 <outlet property="categoryGoal" destination="cKp-wC-j5M" id="CMV-RK-Adg"/>
+                <outlet property="categoryLabel" destination="y6z-r4-GjO" id="ykh-f3-VF2"/>
                 <outlet property="categoryTask" destination="zsU-oM-Nvv" id="rrP-WF-QE0"/>
+                <outlet property="dateLabel" destination="hfv-Vz-c9Q" id="OsS-GU-zJv"/>
                 <outlet property="dateTextField" destination="ATa-D6-jjH" id="ew8-Yr-MPQ"/>
                 <outlet property="dateView" destination="xA0-P1-aBI" id="3yH-IB-zc6"/>
                 <outlet property="notes" destination="XUI-s0-yOl" id="wjR-4C-amV"/>
+                <outlet property="notesLabel" destination="cbl-q3-l1L" id="ZIx-1I-2sV"/>
                 <outlet property="saveButton" destination="eLh-1i-hO5" id="gU1-XJ-b2e"/>
                 <outlet property="taskTitle" destination="fi7-md-sVu" id="z4P-EP-r63"/>
+                <outlet property="taskTitleLabel" destination="dPK-og-zTz" id="zbX-tg-9e2"/>
+                <outlet property="timeLabel" destination="ofW-OW-S00" id="ZUM-XN-aXv"/>
                 <outlet property="timeTextField" destination="FSE-0U-SOS" id="0mb-lk-8au"/>
                 <outlet property="timeView" destination="DKS-bK-rH5" id="zs7-Io-K2K"/>
+                <outlet property="topLabel" destination="SQl-LE-DDW" id="l4d-tt-1KJ"/>
                 <outlet property="view" destination="5cZ-xp-Rd7" id="DQS-9x-hOB"/>
             </connections>
         </placeholder>

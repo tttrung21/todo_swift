@@ -11,6 +11,8 @@ import RxSwift
 import RxCocoa
 import MBProgressHUD
 
+let LocalizeLanguageKey = "LocalizeLanguageKey"
+var LanguageCode = "en"
 class ViewController<V: ViewModel, N: Navigator>: UIViewController {
     var viewModel: V!
     var navigator: N!
@@ -46,7 +48,7 @@ class ViewController<V: ViewModel, N: Navigator>: UIViewController {
             guard let self = self else { return }
             if loading {
                 let Indicator = MBProgressHUD.showAdded(to: self.view, animated: true)
-                Indicator.label.text = "Loading..."
+                Indicator.label.text = ""
                 Indicator.isUserInteractionEnabled = false
                 Indicator.show(animated: true)
             } else {

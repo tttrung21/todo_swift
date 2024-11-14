@@ -46,18 +46,26 @@ class HomeViewModel: ViewModel {
         UserManager.shared.removeUser()
         Application.shared.presentInitialScreen(in: appDelegate.window)
     }
+    func switchLanguage() {
+        if LanguageCode == "en"{
+            LanguageCode = "vi"
+        }
+        else{
+            LanguageCode = "en"
+        }
+        UserDefaults.standard.setValue(LanguageCode, forKey: LocalizeLanguageKey)
+    }
     func deleteItem(todo:TodoModel){
         SupabaseClientManager.shared.todoService.deleteTodo(todo: todo).observeOn(MainScheduler.instance).subscribe(
             onSuccess: {
             _ in 
-                self.navigator.showAlert(title: "Success", message: "Successfully delete todo with id: \(String(describing: todo.id))")
-                DispatchQueue.main.async{
-                    self.fetchItems()
-                }
+                self.navigator.showAlert(title: "Common.Success".localized(), message: "Todo.Delete.Success".localized())
+                self.fetchItems()
+                
             },
             onError: {
                 error in
-                self.navigator.showAlert(title: "Failure", message: error.localizedDescription)
+                self.navigator.showAlert(title: "Common.Error".localized(), message: error.localizedDescription)
             }
         ).disposed(by: disposeBag)
     }

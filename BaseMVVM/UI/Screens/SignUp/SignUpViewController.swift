@@ -22,7 +22,11 @@ class SignUpViewController: ViewController<SignUpViewModel, SignUpNavigator> {
     
     override func setupUI() {
         super.setupUI()
-        showLeftButton()    }
+        showLeftButton()
+        passwordTextField.placeholder = "Password".localized()
+        confirmTextField.placeholder = "Confirm".localized()
+        signUpButton.setTitle("SignUp".localized(), for: .normal)
+    }
     
     override func setupListener() {
         super.setupListener()

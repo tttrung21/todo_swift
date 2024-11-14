@@ -8,6 +8,12 @@ class AddTaskViewController: ViewController<AddTaskViewModel,AddTaskNavigator> {
     let timePickerAlertController = UIAlertController(title: "Select time", message: nil, preferredStyle: .actionSheet)
     var listButtons = [UIButton]()
 
+    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var taskTitleLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var notesLabel: UILabel!
     @IBOutlet weak var dateView: UIView!
     @IBOutlet weak var timeView: UIView!
     @IBOutlet weak var categoryGoal: UIButton!
@@ -39,7 +45,15 @@ class AddTaskViewController: ViewController<AddTaskViewModel,AddTaskNavigator> {
             button.adjustsImageWhenDisabled = false
         }
         saveButton.isEnabled = taskTitle.text != nil
-
+        saveButton.setTitle("Save".localized(), for: .normal)
+        topLabel.text = "AddNewTask".localized()
+        taskTitleLabel.text = "TaskTitle".localized()
+        categoryLabel.text = "Category".localized()
+        dateLabel.text = "Date".localized()
+        dateTextField.text = "Date".localized()
+        timeLabel.text = "Time".localized()
+        timeTextField.text = "Time".localized()
+        notesLabel.text = "Notes".localized()
     }
     override func setupListener() {
         super.setupListener()
@@ -76,7 +90,7 @@ class AddTaskViewController: ViewController<AddTaskViewModel,AddTaskNavigator> {
                         print("Task created successfully")
                         DispatchQueue.main.async{
                             self.showAlert(
-                                title: "Success",
+                                title: "Common.Success".localized(),
                                 message: "Task created successfully",
                                 completion: { _ in
                                     self.viewModel.backToHome()
@@ -148,6 +162,7 @@ extension AddTaskViewController{
             let formatter = DateFormatter()
             formatter.dateStyle = .medium
             dateTextField.text = formatter.string(from: datePicker.date)
+            
         }
     func setUpAlertController () {
             timePickerAlertController.view.addSubview(timePicker)

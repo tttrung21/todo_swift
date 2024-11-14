@@ -21,7 +21,6 @@ class TodoTableViewCell: TableViewCell {
             return
         }
         resetUI()
-        let item = viewModel.item
         viewModel.title.bind(to: titleLabel.rx.text).disposed(by: disposeBag)
         viewModel.dueTime.bind(to: dateLabel.rx.text).disposed(by: disposeBag)
         viewModel.category.map { categoryName -> UIImage? in
