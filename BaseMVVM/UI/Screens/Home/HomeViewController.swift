@@ -76,6 +76,7 @@ class HomeViewController: ViewController<HomeViewModel, HomeNavigator> {
                 guard let self = self else { return }
                 self.viewModel.switchLanguage()
                 updateLanguage()
+                tableTodo.reloadData()
         }.disposed(by: disposeBag)
 //        viewModel.cellTodo.asDriver(onErrorJustReturn: [])
 //                    .drive(self.tableTodo.rx.items(cellIdentifier: TodoTableViewCell.className, cellType: TodoTableViewCell.self)) { tableView, viewModel, cell in
