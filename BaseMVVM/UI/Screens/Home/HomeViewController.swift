@@ -97,7 +97,7 @@ class HomeViewController: ViewController<HomeViewModel, HomeNavigator> {
     private func updateLanguage(){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = Configs.DateFormart.mdy
-        dateFormatter.locale = Locale(identifier: LanguageCode)
+        dateFormatter.locale = Locale(identifier: LanguageManager.shared.languageCode)
         let currentDate = dateFormatter.string(from: Date())
         dateLabel.text = currentDate
         todoListLabel.text = "MyTodoList".localized()

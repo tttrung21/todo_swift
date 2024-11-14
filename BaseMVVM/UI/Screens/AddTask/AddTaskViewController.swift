@@ -76,7 +76,6 @@ class AddTaskViewController: ViewController<AddTaskViewModel,AddTaskNavigator> {
         }.disposed(by: disposeBag)
         viewModel.selectedButton.subscribe(onNext: { [weak self] selectedButton in
             self?.updateButtonStates(selectedButton)}).disposed(by: disposeBag)
-//        saveButton.addTarget(self, action: #selector(addTodo), for: .touchUpInside)
         saveButton.rx.tap.bind { [weak self] in
             
             guard let self = self else { return }
@@ -91,20 +90,17 @@ class AddTaskViewController: ViewController<AddTaskViewModel,AddTaskNavigator> {
                         DispatchQueue.main.async{
                             self.showAlert(
                                 title: "Common.Success".localized(),
-                                message: "Task created successfully",
+                                message: "Todo.Create.Success".localized(),
                                 completion: { _ in
                                     self.viewModel.backToHome()
                                 }
                             )
                         }
-//                        DispatchQueue.main.async{
-//                            self.viewModel.backToHome()
-//                        }
                     },
                     onError: { error in
                         print("error 1")
                         DispatchQueue.main.async{
-                            self.showAlert(title: "Error", message: error.localizedDescription)
+                            self.showAlert(title: "Common.Error".localized(), message: error.localizedDescription)
                         }
                     }
                 ).disposed(by: self.disposeBag)

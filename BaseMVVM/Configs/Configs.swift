@@ -63,7 +63,10 @@ struct Configs {
         static let OAuthToken = "OAuthToken"
         static let CurrentUser = "CurrentUser"
     }
-    
+    struct LanguageKeys{
+        static let LocalizeLanguageKey = "LocalizeLanguageKey"
+//        static var LanguageCode = "en"
+    }
     struct DateFormart {
         static let date = "dd/MM/yyyy"
         static let time = "HH:mm"

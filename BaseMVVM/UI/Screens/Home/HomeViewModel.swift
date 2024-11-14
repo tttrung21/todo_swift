@@ -30,11 +30,6 @@ class HomeViewModel: ViewModel {
                         self?.toggleComplete(todo: updatedTodo)
                     })
                     .disposed(by: disposeBag)
-//        todosRelay.map { items -> [TodoCellViewModel] in
-//            return items.map { item -> TodoCellViewModel in
-//                return TodoCellViewModel(item: item, toggle: self.toggle)
-//            }
-//        }.bind(to: cellVMs).disposed(by: disposeBag)
         
     }
     // MARK: Public Function
@@ -47,13 +42,7 @@ class HomeViewModel: ViewModel {
         Application.shared.presentInitialScreen(in: appDelegate.window)
     }
     func switchLanguage() {
-        if LanguageCode == "en"{
-            LanguageCode = "vi"
-        }
-        else{
-            LanguageCode = "en"
-        }
-        UserDefaults.standard.setValue(LanguageCode, forKey: LocalizeLanguageKey)
+        LanguageManager.shared.updateLanguage()
     }
     func deleteItem(todo:TodoModel){
         SupabaseClientManager.shared.todoService.deleteTodo(todo: todo).observeOn(MainScheduler.instance).subscribe(

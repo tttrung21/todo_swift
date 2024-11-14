@@ -17,7 +17,7 @@ public extension String {
     ///
     func localized() -> String {
 //        return NSLocalizedString(self,tableName: "Localizable",bundle: .main,value: self, comment: self)
-        if let path = Bundle.main.path(forResource: LanguageCode, ofType: "lproj"), let bundle = Bundle(path: path){
+        if let path = Bundle.main.path(forResource: LanguageManager.shared.languageCode, ofType: "lproj"), let bundle = Bundle(path: path){
             return NSLocalizedString(self, bundle: bundle, comment: "")
         }
         return ""
