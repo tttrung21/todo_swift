@@ -1,0 +1,67 @@
+/* 
+ Localizable.strings
+ BaseMVVM
+ 
+ Created by Lê Thọ Sơn on 4/21/20.
+ Copyright © 2020 thoson.it. All rights reserved.
+*/
+
+/* Common */
+"Common.Yes" = "Có";
+"Common.No" = "Không";
+"Common.OK" = "OK";
+"Common.Cancel" = "Huỷ";
+"Common.Done" = "Xong";
+"Common.Back" = "Quay lại";
+"Common.Close" = "Đóng";
+"Common.Edit" = "Sửa";
+"Common.Next" = "Tiếp tục";
+"Common.Skip" = "Bỏ qua";
+"Common.Reset" = "Đặt lại";
+"Common.Save" = "Lưu";
+"Common.Delete" = "Xoá";
+"Common.Search" = "Tìm kiếm";
+"Common.Success" = "Thành công";
+"Common.Error" = "Lỗi";
+"Common.NoResults" = "Không có kết quả";
+/* Toast */
+"Toast.ConnectionBack.Message" = "Đã có kết nối";
+"Toast.ConnectionLost.Message" = "Không có kết nối";
+
+/* Common Alert*/
+"Pick.Image.Alert" = "Choose Photo";
+"Pick.Image.From.Camera" = "Camera";
+"Pick.Image.From.Gallery" = "Gallery";
+"Pick.Image.None_Permision.Alert" = "App don't have permission to access you Photo";
+"Pick.Image.None_Permision.Message" = "Open \"Setting\" and provide permission";
+
+/* Navigation */
+"Navigation.Title" = "MVVM Demo";
+
+/* Login */
+"Login.Email.Empty" = "Chưa nhập email";
+"Login.Password.Empty" = "Chưa nhập mặt khẩu";
+"Login.Username.Password.Invalid" = "Tên đăng nhập hoặc mật khẩu chưa đúng";
+"Login.Email.Format" = "Email chưa đúng định dạng";
+"Confirm.Password.Empty" = "Chưa nhập xác nhận mật khẩu";
+"Confirm.Doesn't.Match" = "Xác nhận mật khẩu không trùng khớp";
+"SignIn" = "Đăng nhập";
+"SignUp" = "Đăng ký";
+"Password" = "Mật khẩu";
+"Confirm" = "Xác nhận mật khẩu";
+
+"Todo.Delete.Success" = "Xoá thành công";
+"Todo.Create.Success" = "Tạo thành công";
+"Complete" = "Hoàn Thành";
+"MyTodoList" = "Danh sách cần làm";
+
+"AddNewTask" = "Thêm mới";
+"Save" = "Lưu";
+"TaskTitle" = "Tên việc";
+"Date" = "Ngày";
+"Time" = "Giờ";
+"Category" = "Loại";
+"Notes" = "Ghi chú";
+"EmptyCategory" = "Chưa chọn loại";
+"EmptyDate" = "Ngày không được bỏ trống";
+"EmptyTitle" = "Tiêu đề không được bỏ trống";
